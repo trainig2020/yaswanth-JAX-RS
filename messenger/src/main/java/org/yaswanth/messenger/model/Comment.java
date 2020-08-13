@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement 
 public class Comment {
     private long id;
-    private String mesage;
+    private String message;
     private Date created;
     private String author;
 	public long getId() {
@@ -16,11 +16,12 @@ public class Comment {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getMesage() {
-		return mesage;
+	public String getMessage() {
+		
+		return message;
 	}
-	public void setMesage(String mesage) {
-		this.mesage = mesage;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	public Date getCreated() {
 		return created;
@@ -34,10 +35,9 @@ public class Comment {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public Comment(long id, String mesage, String author) {
-		super();
+	public Comment(long id, String message, String author) {
 		this.id = id;
-		this.mesage = mesage;
+		this.message = message;
 		this.created = new Date();
 		this.author = author;
 	}

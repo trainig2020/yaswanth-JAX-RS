@@ -11,7 +11,9 @@ import org.yaswanth.messenger.model.Message;
 public class CommentService {
    private Map<Long, Message> messages = DatabaseClass.getMessages();
 
-   
+//   public CommentService() {
+//	   messages.put(1L, new Comment(1L, "hai", "yaswanth"));
+//   }
    public List<Comment> getAllComments(long messageId){
 	   Map<Long, Comment> comments = messages.get(messageId).getComments();
 	   return new ArrayList<Comment>(comments.values());

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.yaswanth.messenger.database.DatabaseClass;
+import org.yaswanth.messenger.exception.DataNotFoundException;
 import org.yaswanth.messenger.model.Message;
 import org.yaswanth.messenger.model.Profile;
 
@@ -50,7 +51,11 @@ public class MessageService {
 	}
 	
 	public Message getMessage(long id) {
-		return messages.get(id);
+		Message message= messages.get(id);
+		if(message == null) {
+			throw new DataNotFoundException("message with id  " + id + " not found");
+		}
+		return message;
 	}
 	
 	public Message addMessage(Message message) {
